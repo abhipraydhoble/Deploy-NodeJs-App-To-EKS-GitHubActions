@@ -1,4 +1,4 @@
-## deploy-nodejs-app-to-eks-using-actions
+## Deploy-NodeJs-App-To-EKS-Using-Actions
 #### launch one instance t2.medium
 =================================================================================
 
@@ -41,7 +41,7 @@ sudo apt-get install -y kubectl
 ````
 ===================================================================================
 
-** 3:Install AWS CLI on Ubuntu**
+**3:Install AWS CLI on Ubuntu**
 ##### Download the aws cli bundle using below command
 ````
 sudo apt install unzip -y
@@ -57,13 +57,13 @@ sudo ./aws/install
 aws configure
 ````
 ============================================================================
-**6:Create Amazon EKS cluster using eksctl**
+**5:Create Amazon EKS cluster using eksctl**
 ````
 eksctl create cluster --name demo-ekscluster --region us-east-1 --version 1.27 --nodegroup-name linux-nodes --node-type t2.micro --nodes 2
 ````
 =============================================================================
 
-** 7:Check nodes in EKS cluster**
+**6:Check nodes in EKS cluster**
 To check the details about your node run the below command
 ````
 kubectl get nodes
