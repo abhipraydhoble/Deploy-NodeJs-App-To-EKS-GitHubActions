@@ -1,13 +1,13 @@
-# deploy-nodejs-app-to-eks-using-actions
+## deploy-nodejs-app-to-eks-using-actions
 launch one instance t2.medium
 =================================================================================
-# 1:Install eksctl CLI tool for creating EKS Clusters on AWS
+ **1:Install eksctl CLI tool for creating EKS Clusters on AWS**
 download eksctl CLI tool for creating EKS Clusters on AWS
-curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+```` curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp ````
 move eksctl setup to /usr/local/bin directory
-sudo mv /tmp/eksctl /usr/local/bin 
+```` sudo mv /tmp/eksctl /usr/local/bin```` 
 To check eksctl version
-eksctl version
+```` eksctl version ````
 ==================================================================================
 # 2:Install Kubectl on Ubuntu
 Add the kubectl GPG key
