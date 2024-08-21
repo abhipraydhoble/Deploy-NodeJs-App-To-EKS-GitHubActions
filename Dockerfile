@@ -1,19 +1,30 @@
-FROM node:18
+name: Simple CI Pipeline
 
-# Create app directory
-WORKDIR /usr/src/app
+on: [push, pull_request]
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-RUN npm install
-# If you are building your code for production
-# RUN npm ci --omit=dev
+    steps:
+      # Checkout the code from the repository
+      - name: Checkout code
+        uses: actions/checkout@v4  # Updated to the latest version
 
-# Bundle app source
-COPY . .
+      # Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v4  # Updated to the latest version
+        with:
+          node-version: '14'
 
-EXPOSE 8080
-CMD [ "node", "server.js" ]
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Run tests
+      - name: Run tests
+        run: npm test
+
+      # Build the project (optional, depending on your project)
+      - name: Build project
+        run: npm run build
